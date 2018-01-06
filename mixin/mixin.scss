@@ -1,0 +1,14 @@
+/***************************/
+/* Mixins for different breakpoints */
+/***************************/
+
+@mixin mediaMobile {
+  @media only screen and (max-width: $screen-mobile-max) {
+    @content;
+  }
+}
+@mixin mediaTablet {
+  @media only screen and  (max-width: $screen-tablet-max) {
+    @content;
+  }
+}

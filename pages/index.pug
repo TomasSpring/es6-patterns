@@ -1,0 +1,42 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    |
+    link(href="http://fonts.googleapis.com/css?family=Roboto:400,300,700", rel="stylesheet", type="text/css")
+
+  body
+    header.header
+      h1 News PUG
+    |
+    #js-content.content
+      .sources-block
+        ul
+          li.source-list-item.talksport
+            h2 Talksport
+            |
+            img.source-list-img(data-chanel="talksport", src="img/talksport.png", alt="Talksport")
+          |
+          li.source-list-item.bloomberg
+            h2 Bloomberg
+            |
+            img.source-list-img(data-chanel="bloomberg", src="img/bloomberg.png", alt="Bloomberg")
+          |
+          li.source-list-item.cnbc
+            h2 CNBC
+            |
+            img.source-list-img(data-chanel="cnbc", src="img/cnbc.png", alt="CNBC")
+          |
+          li.source-list-item.crypto
+            h2 Crypto coins news
+            |
+            img.source-list-img(data-chanel="crypto-coins-news", src="img/crypto-coins-news.png", alt="Crypto coins news")
+          li.source-list-item.crypto
+            h2 Default news
+            |
+            img.source-list-img.js-show-default-source(src="img/default.png", alt="default")
+
+      .count-block      
+      .news-block
+
+    |

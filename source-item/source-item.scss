@@ -1,0 +1,41 @@
+@import '../variables/variables';
+@import '../mixin/mixin';
+@import '../news-block/news-block';
+
+.news-list-item {
+    border-style: solid;
+    border-color: #E7E7E7;
+    border-width: 1px;
+    background-color: #FFF;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+    display: flex;
+    display: -ms-flexbox; 
+    margin-top: -1px;
+    padding: 10px;
+    &:hover {
+        box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.18);
+    }
+    img {
+      max-width: 100%;
+      width: 200px;
+      align-self: center;
+      object-fit: contain;  
+    }
+    &-wrapper {
+       padding-left: 20px; 
+    }
+    &-title {
+        a {
+          color: $header-bg;
+          text-decoration: none;
+           max-width: 800px;
+           display: block;  
+        }
+    }
+    
+  
+}
+.caption {
+    font-weight: bold;
+}
+

@@ -1,0 +1,26 @@
+.header {
+    background-color: $header-bg;
+    padding: 14px;
+}
+.header h1 {
+    color: $white-1;
+}
+
+.content .sources-block ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+.content .sources-block li {
+    text-align: center;
+}
+
+.content .source-list-img {
+    width: 120px;
+    height: 120px;
+}
+
+.content .source-list-img:hover {
+    box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.18);
+    cursor: pointer;
+}
