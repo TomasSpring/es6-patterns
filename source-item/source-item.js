@@ -2,18 +2,37 @@ import {DEFAULT_SOURCE,API_KEY,URL,ROOT_NODE,NEWS_BLOCK,GET_ALL_CHANELL_BUTTON,C
 import './source-item.scss';
 import EventObserver from '../utils/eventObserver';
 
+let instance = null;
 
 export default class News {
-  constructor (){
-    this.ARTICLES_COUNT = 0;
-    this.pubsub = new EventObserver();
-    this.pubsub.subscribe('showCount', this.showCountNews, this);
+
+  static get instance() {
+    return instance;
+  }
+
+  static set instance(_instance) {
+    instance = _instance;
+  }
+/* Singleton pattern example */
+  constructor () {
+    if (News.instance === null) {
+      News.instance = this;
+    }
+    return News.instance;
+  }
+
+  getInstance() {
+    return new News();
   }
       /**
      * Inits instance
      * @param node - DOM node to instantiate class
      */
     init(sources) {
+      this.ARTICLES_COUNT = 0;
+      this.pubsub = new EventObserver();
+      this.pubsub.subscribe('showCount', this.showCountNews, this);
+
         if(sources) {
             this.sendRequest(sources);
         }
