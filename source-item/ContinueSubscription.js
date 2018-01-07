@@ -9,7 +9,10 @@ export default class ContinueSubscription extends AdditionalDecaratorActions {
   getDescription() {
     return this.subscription.getDescription() + ', Continue';
   }
-
+  /**
+   * Get total subscription cost
+   * @param source {String} - news source
+   */
   subscribe() {
     return 0.20 + this.subscription.subscribe();
   }

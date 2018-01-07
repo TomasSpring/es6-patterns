@@ -20,6 +20,7 @@ export default class News extends SubscriptionList {
   constructor (description) {
     super ();
     this.description = description;
+    console.log (description + " news were called!");
     if (News.instance === null) {
       News.instance = this;
     }
@@ -48,7 +49,6 @@ export default class News extends SubscriptionList {
   };
     /**
    * show count of news
-   *
    */
    showCountNews () {
      COUNT_BLOCK.innerHTML = this.ARTICLES_COUNT;
