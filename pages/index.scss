@@ -11,4 +11,8 @@ body {
     margin: 0;
 }
 
-
+.lighting {
+  border: 2px solid $red-1;
+  box-shadow: 0 0 15px rgb(255, 147, 147);
+  border-radius: 10px;
+}
