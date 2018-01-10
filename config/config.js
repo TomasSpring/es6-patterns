@@ -5,3 +5,4 @@ export const NEWS_BLOCK = ROOT_NODE.querySelector('.news-block');
 export const GET_ALL_CHANELL_BUTTON = ROOT_NODE.querySelector('.sources-block');
 export const DEFAULT_SOURCE = 'bbc-news';
 export const COUNT_BLOCK = ROOT_NODE.querySelector('.count-block');
+export const SUBSCRIBE_BUTTON = ROOT_NODE.querySelector('.subscribe-btn');

@@ -1,3 +1,5 @@
+/*------------------------ Observer pattern example ------------------------*/
+
 export default class EventObserver {
   constructor() {
     this.handlers = [];

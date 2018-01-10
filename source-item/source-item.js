@@ -1,19 +1,45 @@
 import {DEFAULT_SOURCE,API_KEY,URL,ROOT_NODE,NEWS_BLOCK,GET_ALL_CHANELL_BUTTON,COUNT_BLOCK} from '../config/config';
-import './source-item.scss';
+
 import EventObserver from '../utils/eventObserver';
+import SubscriptionList from './SubscriptionList';
 
+import './source-item.scss';
 
-export default class News {
-  constructor (){
-    this.ARTICLES_COUNT = 0;
-    this.pubsub = new EventObserver();
-    this.pubsub.subscribe('showCount', this.showCountNews, this);
+let instance = null;
+
+export default class News extends SubscriptionList {
+
+  static get instance() {
+    return instance;
+  }
+
+  static set instance(_instance) {
+    instance = _instance;
+  }
+/* Singleton pattern example */
+  constructor (description) {
+    super ();
+    this.description = description;
+    console.log (description + " news were called!");
+    if (News.instance === null) {
+      News.instance = this;
+    }
+
+    return News.instance;
+  }
+
+  getInstance() {
+    return new News();
   }
       /**
      * Inits instance
      * @param node - DOM node to instantiate class
      */
     init(sources) {
+      this.ARTICLES_COUNT = 0;
+      this.pubsub = new EventObserver();
+      this.pubsub.subscribe('showCount', this.showCountNews, this);
+
         if(sources) {
             this.sendRequest(sources);
         }
@@ -23,15 +49,18 @@ export default class News {
   };
     /**
    * show count of news
-   *
    */
    showCountNews () {
      COUNT_BLOCK.innerHTML = this.ARTICLES_COUNT;
    }
 
-     getCountNews() {
-       this.pubsub.publish('showCount');
-     }
+    getCountNews() {
+      this.pubsub.publish('showCount');
+    }
+
+    subscribe() {
+      return 5.99;
+    }
     /**
      * Builds url to make fetch request
      * @param source {String} - news source

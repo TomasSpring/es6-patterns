@@ -1,7 +1,7 @@
 
 module.exports = class Utils {
 
-/**
+    /**
      * Builds url to make fetch request
      * @param source {String} - news source
      * @returns {string} - url
@@ -11,7 +11,7 @@ module.exports = class Utils {
             return `${URL}${source}&apiKey=${API_KEY}`
         }
     };
-    
+
     /**
      * Sends fetch request
      * @param source {String} - news source
@@ -25,7 +25,7 @@ module.exports = class Utils {
                 nodes
         })).catch ((err)=> console.log(err));
     };
-    
+
     /**
      * Parses data from response
      * @param data {Object} - data from API
@@ -34,7 +34,7 @@ module.exports = class Utils {
      parseJSON(data) {
         return data.json();
     };
-    
+
     /**
      * Renders result to DOM
      * @param stringNodes {String} - assembled news items
@@ -44,7 +44,7 @@ module.exports = class Utils {
     }) {
          stringNodes.map((el) => NEWS_BLOCK.insertAdjacentHTML('afterbegin', el));
     };
-    
+
     /**
      * Parses data from response
      * @param data {Object} - data from API
@@ -74,7 +74,7 @@ module.exports = class Utils {
                     </div>
                 </div>
               `;
-            
+
         });
     };
 };
